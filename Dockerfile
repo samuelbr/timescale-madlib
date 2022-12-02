@@ -10,7 +10,7 @@ USER root
 COPY --from=0 /madlib_1.20.0-2_amd64.deb /
 
 RUN cp /usr/share/postgresql/11/postgresql.conf.sample /usr/share/postgresql/11/postgresql.conf.sample.old
-RUN apt update && apt install -y -f python2.7 postgresql-plpython-11 m4
+RUN apt update && apt install -y -f python2.7 postgresql-plpython-11 m4 timescaledb-2-postgresql-11
 RUN cp /usr/share/postgresql/11/postgresql.conf.sample.old /usr/share/postgresql/11/postgresql.conf.sample
 RUN dpkg -i /madlib_1.20.0-2_amd64.deb
 
